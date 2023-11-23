@@ -5,10 +5,6 @@
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
   </a>
   
-  <a target="_blank" href="https://git.maxtrier.dk/natamo">
-    <img src="https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white" />
-  </a>
-  
   <a target="_blank" href="https://www.linkedin.com/in/maxtrier/">
     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
