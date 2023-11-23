@@ -27,14 +27,14 @@ export default function Header({}) {
 
             <div className={styles.contact}>
                 <Contact
-                    text="madstk1"
+                    text="maxnatamo"
                     link="https://github.com/maxnatamo"
                     icon={faGithub}
                 />
 
                 <Contact
-                    text="madstk1@pm.me"
-                    link="mailto:madstk1@pm.me"
+                    text="me@maxtrier.dk"
+                    link="mailto:me@maxtrier.dk"
                     icon={faEnvelope}
                 />
 
