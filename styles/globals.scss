@@ -1,0 +1,44 @@
+@import 'node_modules/@fortawesome/fontawesome-svg-core/styles';
+
+html,
+body,
+#__next {
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div.container {
+    width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+
+    &, th, td {
+        border: 1px solid #444;
+    }
+
+    th, td {
+        text-align: center;
+    }
+}

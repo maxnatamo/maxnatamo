@@ -1,0 +1,50 @@
+@use '@styles/sizes' as *;
+
+div.section {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    font-family: 'Roboto Slab', serif;
+
+    @include screen-max($screen-md) {
+        flex-direction: column;
+    }
+
+    @include screen-min($screen-md) {
+        flex-direction: row;
+    }
+
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #888;
+
+    .title {
+        width: 25%;
+        margin: 0 0.1rem;
+
+        @include screen-max($screen-md) {
+            margin-bottom: 1rem;
+        }
+
+        padding: 0 1rem;
+        color: rgb(109, 109, 121);
+        font-size: 1.4rem;
+    }
+
+    .content {
+        width: 75%;
+
+        font-size: 16px;
+        line-height: 1.2;
+
+        @include screen-max($screen-md) {
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        p {
+            margin: 0 0.1rem;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "profile": "I'm a 23 year-old, passionate backend developer, with a very deep interest in almost anything in the field of IT. I am currently employed as a backend developer at Diviso ApS in Viborg.<br /><br />I work a lot with computers in my spare time and I spend a lot of time with immersing myself in something or learning something new.",
+    "title": "Backend developer",
+    "skills": {
+        "title": "Skills",
+        "methods": {
+            "title": "Processes",
+            "content": "In my schooltime, I have used SCRUM and Unified Process in multiple projects."
+        },
+        "design": {
+            "title": "Interface Design",
+            "content": "Good understanding about colors and the design-patterns of websites."
+        },
+        "curiosity": {
+            "title": "Curiosity",
+            "content": "I'm always looking for new things that I can use, so I can use them in practice."
+        }
+    },
+    "knowledge": {
+        "title": "Knowledge",
+        "systems": {
+            "title": "Windows and Linux",
+            "content": "I use Linux on all my devices and have done so for years. However, I still have a solid grasp with Windows and macOS."
+        },
+        "programming": {
+            "title": "Programming",
+            "content": "C#, C/C++, Python, JavaScript, ReactJS, Node, X86 Assembly, RabbitMQ, GraphQL"
+        },
+        "devops": {
+            "title": "DevOps",
+            "content": "Git, CI/CD, Docker, Kubernetes, virtual machines, web servers"
+        }
+    },
+    "jobs": {
+        "title": "Experience",
+        "diviso": {
+            "company": "Diviso ApS",
+            "title": "Backend developer",
+            "time": "2023-"
+        },
+        "hella": {
+            "company": "Hella Gutmann Solutions A/S",
+            "title": "Intern / Junior developer",
+            "time": "2022"
+        },
+        "ly": {
+            "company": "Latiner Ly",
+            "title": "Dishwasher",
+            "time": "2017"
+        },
+        "bilka": {
+            "company": "Bilka",
+            "title": "Young worker",
+            "time": "2016-2017"
+        }
+    },
+    "education": {
+        "title": "Education",
+        "dania": {
+            "school": "Erhvervsakademi Dania, Skive",
+            "title": "Computer Science",
+            "time": "2019-2023"
+        },
+        "mercantec": {
+            "school": "Mercantec, Viborg",
+            "title": "HTX, Game Design",
+            "time": "2016-2019"
+        },
+        "primary": {
+            "school": "Vestervang Skole, Viborg",
+            "title": "Very tiny kid",
+            "time": "2006-2016"
+        }
+    }
+}

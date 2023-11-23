@@ -1,0 +1,74 @@
+@keyframes navbar-entry {
+    from {
+        opacity: 0;
+        top: -100px;
+    }
+
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+div.navbar {
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    top: 0;
+
+    font-family: 'Playfair Display', serif;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    column-gap: 18px;
+    
+    opacity: 0;
+    animation: navbar-entry 600ms 200ms forwards;
+}
+
+button.switch {
+    position: absolute;
+    right: 1em;
+    border: none;
+
+    height: 24px;
+    padding: 4px 8px;
+
+    font-size: 13px;
+    line-height: 13px;
+    font-family: 'Playfair Display', serif;
+
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+
+    background-color: transparent;
+
+    svg {
+        margin-right: 6px;
+        margin-bottom: -1px;
+        color: #4c5792;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -99;
+        top: 100%;
+        bottom: -1px;
+        left: 0rem;
+        right: 0rem;
+            
+        background-color: #0c133a;
+        background-size: cover;
+        transition: all 0.15s;
+    }
+
+    &:hover::after {
+        left:  0.5rem;
+        right: 0.5rem;
+        background-color: #1e275a;
+    }
+}

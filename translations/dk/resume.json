@@ -1,0 +1,75 @@
+{
+    "profile": "Jeg er en 23-årig, passioneret datamatiker student, som har dyb interesse for næsten alt indenfor IT. I øjeblikket arbejder jeg som backend udvikler hos Diviso ApS i Viborg.<br /><br />Jeg arbejder meget med computere i min fritid, og jeg bruger meget af tiden på enten at fordybe mig i noget eller lære noget nyt.",
+    "title": "Datamatiker",
+    "skills": {
+        "title": "Færdigheder",
+        "methods": {
+            "title": "Arbejdsmetoder",
+            "content": "I min skoletid, har jeg brugt SCRUM og Unified Process til flere projekter."
+        },
+        "design": {
+            "title": "Interface Design",
+            "content": "God forståelse på farver og design-sammensætninger af hjemmesider."
+        },
+        "curiosity": {
+            "title": "Nysgerrighed",
+            "content": "Jeg kigger altid efter nye ting som jeg kan lære, så jeg kan sætte dem i brug."
+        }
+    },
+    "knowledge": {
+        "title": "Teknisk viden",
+        "systems": {
+            "title": "Windows og Linux",
+            "content": "Jeg bruger Linux på alle mine maskiner og har brugt det i flere år. Jeg har dog stadig god viden af Windows."
+        },
+        "programming": {
+            "title": "Programmering",
+            "content": "C/C++, C#, Python, JavaScript, ReactJS, Node, X86 Assembly, RabbitMQ, GraphQL"
+        },
+        "devops": {
+            "title": "DevOps",
+            "content": "Git, CI/CD, Docker, Kubernetes, virtuelle maskiner, web servere"
+        }
+    },
+    "jobs": {
+        "title": "Erfaring",
+        "diviso": {
+            "company": "Diviso ApS",
+            "title": "Backend udvikler",
+            "time": "2023-"
+        },
+        "hella": {
+            "company": "Hella Gutmann Solutions A/S",
+            "title": "Praktikant / Junior udvikler",
+            "time": "2022"
+        },
+        "ly": {
+            "company": "Latiner Ly",
+            "title": "Opvasker",
+            "time": "2017"
+        },
+        "bilka": {
+            "company": "Bilka",
+            "title": "Ungarbejder",
+            "time": "2016-2017"
+        }
+    },
+    "education": {
+        "title": "Uddannelse",
+        "dania": {
+            "school": "Erhvervsakademi Dania, Skive",
+            "title": "Datamatiker",
+            "time": "2019-2023"
+        },
+        "mercantec": {
+            "school": "Mercantec, Viborg",
+            "title": "HTX, Game Design",
+            "time": "2016-2019"
+        },
+        "primary": {
+            "school": "Vestervang Skole, Viborg",
+            "title": "Meget lille unge",
+            "time": "2006-2016"
+        }
+    }
+}

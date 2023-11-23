@@ -1,0 +1,54 @@
+div.list {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+
+    div.element {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+
+        border-bottom: 1px solid #b3b3b3;
+        padding: 1rem 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        div.text {
+            display: flex;
+            flex-direction: column;
+
+            flex-grow: 1;
+
+            h5 {
+                font-size: 1.3rem;
+                color: rgb(109, 109, 121);
+                margin: 0 0.1rem;
+            }
+
+            h6 {
+                font-size: 1.1rem;
+                margin: 0 0.1rem;
+                color: rgb(118, 118, 124);
+            }
+        }
+
+        div.time { 
+            h6 {
+                font-size: 1.1rem;
+                margin: 0 0.1rem;
+                color: #6d7081;
+            }
+        }
+    }
+}

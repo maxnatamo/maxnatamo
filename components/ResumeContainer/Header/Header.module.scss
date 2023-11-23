@@ -1,0 +1,57 @@
+@use '@styles/sizes' as *;
+
+div.header {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    font-family: 'Roboto Slab', serif;
+
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #888;
+
+    @include screen-max($screen-md) {
+        flex-direction: column;
+    }
+
+    div.name {
+        flex-grow: 1;
+
+        @include screen-max($screen-md) {
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            font-size: 3rem;
+            color: #0c133a;
+
+            margin: 0 0.1rem;
+        }
+
+        .subtitle {
+            font-size: 1.7rem;
+            line-height: 1.4rem;
+            color: #555a74;
+
+            margin: 0 0.1rem;
+        }
+    }
+
+    div.contact {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        row-gap: 4px;
+
+        a {
+            font-size: 1.1rem;
+            color: #555a74;
+
+            svg {
+                margin-right: 10px;
+            }
+        }
+    }
+}

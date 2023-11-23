@@ -1,0 +1,38 @@
+@use '@styles/sizes' as *;
+
+div.grid {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    font-family: 'Roboto Slab', serif;
+
+    @include screen-max($screen-md) {
+        flex-direction: column;
+    }
+
+    div.column {
+        width: calc(100% / 3);
+
+        @include screen-max($screen-md) {
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: rgb(109, 109, 121);
+
+            margin-top: 0.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .text{ 
+            width: 90%;
+        }
+    }
+}

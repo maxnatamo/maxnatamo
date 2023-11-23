@@ -1,0 +1,6 @@
+{
+    "intro": {
+        "title": "Hi, my<br/>name is <bold>Max</bold>, 23.",
+        "description": "I'm a newly-educated <bold>backend developer</bold> from Skive, Denmark.<br /><br />I am a software developer, and the creator of a C# GraphQL library called Chart and an MVC implementation, also in C#. Most of my projects are open source and can be found found on my GitHub.<br /><br />I have most of my experience from backend development, but I also work in some frontend development from time to time. I also do DevOps stuff daily on my home-server."
+    }
+}
