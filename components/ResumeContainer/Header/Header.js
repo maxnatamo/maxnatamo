@@ -40,7 +40,7 @@ export default function Header({}) {
 
                 <Contact
                     text="+45 60714502"
-                    link="#"
+                    link="tel:+4560714502"
                     icon={faPhone}
                 />
             </div>
