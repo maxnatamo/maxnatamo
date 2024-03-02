@@ -2,9 +2,10 @@
 title: 📨 Set up your own Mailserver in 2022
 description: Dive into setting up DNS for a self-hosted mail server.
 publishDate: 'Mar 26 2022'
-thumbnail: "/thumbs/mailserver.png"
+thumbnail: "/thumbs/mailserver.webp"
+thumbnailAlt: 'Icon of the Mail app on an iPad'
 ---
-
+    
 > **Update from March 3rd, 2024**
 >
 > This article is rather old and has not aged as well, as I'd hoped.
@@ -90,7 +91,7 @@ Depending on your VPS provider, you might need to setup your *Reverse DNS*, when
 
 On DigitalOcean, to map a PTR record, you need to name the Droplet after your mail-domain. In my case, *mail.maxtrier.dk*
 
-![](/mailserver/vps_hostname.png "")
+![](/mailserver/vps_hostname.webp "")
 
 After your Droplet is setup, your Reverse DNS (PTR) record should be created. Depending on your DNS server, it might take up to 6 hours to propogate. If you're using DigitalOcean's DNS servers, your rDNS should point to your mail-domain, right away. You can test it by running
 
@@ -112,7 +113,7 @@ Now that your VPS is up and running, you should set your initial DNS records. We
 
 First things first, A-record. DNS A-records are used to resolve an IP-address (1.2.3.4) to a domain (example.com). We want our mail-domain (mail.example.com) to resolve to our VPS. Get your VPS' IP from the control panel and navigate to your DNS providers control panel. I'm using Cloudflare as my DNS provider.
 
-![](/mailserver/mail_a.png "")
+![](/mailserver/mail_a.webp "")
 
 Ensure the *Type* is set to A. If needed, you can add a AAAA-record for IPv6. I won't do this, since I don't have IPv6 networking. Under *Name*, write your mail-subdomain name. On Cloudflare, you don't need to write the entire domain name, only the subdomain part. On *IPv4 address*, input your VPS' IPv4-address. 
 
@@ -122,7 +123,7 @@ Ensure the *Type* is set to A. If needed, you can add a AAAA-record for IPv6. I 
 
 Next, MX-record. This determines which domains can handle e-mails for your root-domain. So, when you send an e-mail to *admin@domain.com*, a mail-server will handle that e-mail. This mail-server is determined from the MX-record. Multiple MX-records can be added for redundancy and load-balancing. That's why you can specify a *Priority*. Multiple MX-records can have the same Priority, which will split the load evenly. 
 
-![](/mailserver/mail_mx.png "")
+![](/mailserver/mail_mx.webp "")
 
 Ensure the Type is set to MX. Under *Name*, you can either write your root-domain, or *@* if you're using Cloudflare. Then, put your mail-domain under *Mail server*. The Mail server must not point to a CNAME or IPv4-address. Under *Priority*, 10 is usually used. Why? I really don't know. Anyway, a lower priority will make the mail-server more *prefereable*.
 
@@ -130,9 +131,9 @@ Ensure the Type is set to MX. Under *Name*, you can either write your root-domai
 
 Here is where you should be configuring and installing your mail solution. I won't go into too much detail, as it might change over time and it depends on which solution you're rolling with.
 
-If you're using Mailu, they have a neat setup page [here](https://setup.mailu.io/1.9).
+If you're using Mailu, [they have a neat setup page here](https://setup.mailu.io/1.9).
 
-Mailcow users can find a guide [here](https://mailcow.github.io/mailcow-dockerized-docs/i_u_m/i_u_m_install/), in the documentation.
+[Mailcow users can find a guide here](https://mailcow.github.io/mailcow-dockerized-docs/i_u_m/i_u_m_install/), in the documentation.
 
 ## Done! Right..?
 
@@ -158,8 +159,8 @@ For Let's Encrypt, you have 2 options. Either request a *wildcard certificate* o
 
 Either which one you choose, tons of write-ups explain it better than I can:
 
-* **Individual Subdomains:** [here](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
-* **Wildcard certificate:** [here](https://websiteforstudents.com/setup-lets-encrypt-wildcard-on-ubuntu-20-04-18-04/)
+* **Individual Subdomains:** [Tutorial by Brian Boucheron](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
+* **Wildcard certificate:** [Write-up by Richard](https://websiteforstudents.com/setup-lets-encrypt-wildcard-on-ubuntu-20-04-18-04/)
 
 I won't go in-depth on how to install them, as tons of guides already exist. If you're in doubt, search it up.
 
@@ -177,7 +178,7 @@ While your DNS provider might have a dedicated record-type for SPF, they're usua
 
 Let's start by allowing our root-domain to send mail.
 
-![](/mailserver/root_spf.png "")
+![](/mailserver/root_spf.webp "")
 
 Again, ensure *Type* is set to TXT. Under *Name*, write the root-domain name or *@*, if using Cloudflare. This will match mails like *admin@maxtrier.dk*, but not *admin@mail.maxrier.dk*. If you want to use a subdomain in your mail, write that subdomain in *Name*. 
 
@@ -191,13 +192,13 @@ Now, under *Content*, we need to specify a tiny bit.
 
 Next up, the mail-subdomain.
 
-![](/mailserver/mail_spf.png "")
+![](/mailserver/mail_spf.webp "")
 
 Much like above, we specify *v=spf1* as the version, but instead of *mx*, we write *a*. This simply means, instead of allowing the MX-server of the root-domain - which resolves to the mail-server - just use the A-record of this domain, which is the mail-server. And, again, fail any mails that don't match with *-all*.
 
 It's good riddance to disallow any other domains that aren't supposed to send mail, such as *login.maxtrier.dk* or others, from sending mail. This includes the *www.-"sub-domain"*.
 
-![](/mailserver/www_spf.png "")
+![](/mailserver/www_spf.webp "")
 
 Here, we don't match anything. Simply drop all mails coming from *www.maxtrier.dk*. If you don't have this or any other subdomains, then skip it.
 
@@ -211,7 +212,7 @@ DKIM keys are usually handled by your mail-solution. It will therefore change wi
 
 Once you have the key, make a new TXT-record:
 
-![](/mailserver/root_dkim.png "")
+![](/mailserver/root_dkim.webp "")
 
 Under *Name*, enter *“dkim._domainkey”* and under *Content* write:
 
@@ -229,7 +230,7 @@ DMARC is also a bit special, because it actually requires *2 records*. One to ha
 
 Let's start with the error-handling record.
 
-![](/mailserver/dmarc_error.png "")
+![](/mailserver/dmarc_error.webp "")
 
 Use *“_dmarc”* as *Name* and use the following as *Content*:
 
@@ -241,7 +242,7 @@ Like SPF, we define the DMARC-version as version 1. Next, what to do with mails 
 
 The second record is a lot simpler. Again, new TXT-record.
 
-![](/mailserver/dmarc_report.png "")
+![](/mailserver/dmarc_report.webp "")
 
 Under Name, put *“\<root-domain\>._report._dmarc”* after replacing *“\<root-domain\>”* with your own root-domain (such as *maxtrier.dk*). In Content, put *“v=DMARC1”*. Now you're done with DMARC!
 
@@ -275,7 +276,7 @@ It's important that you don't point to the certificate in `/etc/letsencrypt/live
 
 After you get your hash, add a *TLSA-record* in your DNS.
 
-![](/mailserver/tlsa.png "")
+![](/mailserver/tlsa.webp "")
 
 Here, we're adding a TLSA-record for port 25/TCP, which is SMTP. Set *Name* to *“_25._tcp.mail”*, accordingly. Set *Usage* to 3, *Selector* to 1 and *Matching type* to 1. Afterwards, paste the hash from earlier into *Certificate*.
 
@@ -287,13 +288,13 @@ Some mail-clients support *“autodiscover”*, which attempts to get the SMTP/I
 
 Firstly, you need to get autodiscover. Make a new SRV-record.
 
-![](/mailserver/srv_auto.png "")
+![](/mailserver/srv_auto.webp "")
 
 Ensure *Type* to SRV, set *Name* to your root-domain, *Service* to *“_autodiscover”*, *Protocol* to TCP, *Priority* to 0, *Weight* to 1 and *Port* to 443. Lastly, enter your mail-subdomain under *Target*. Now you have autodiscover-enabled! But, you haven't set any SRV-records for any services, yet.
 
 The steps below are  meant to be repeated for all your services. So, this would mean IMAP, SMTP, POP3 and all of the secure versions, too.
 
-![](/mailserver/srv_smtp.png "")
+![](/mailserver/srv_smtp.webp "")
 
 Again, make a new SRV-record, but set the *Service* and *Port* values to one of the values below:
 
@@ -309,7 +310,7 @@ Again, make a new SRV-record, but set the *Service* and *Port* values to one of 
 
 When you're done, your DNS-table should look similar to this:
 
-![](/mailserver/srv.png "")
+![](/mailserver/srv.webp "")
 
 ## Wrapping Up and Troubleshooting
 
