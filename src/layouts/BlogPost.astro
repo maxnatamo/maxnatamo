@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import FormattedDate from '@components/FormattedDate.astro';
+
+import { SITE_TITLE } from '@consts';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const {
+    title,
+    publishDate
+} = Astro.props;
+
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={`${title} - ${SITE_TITLE}`} />
+    </head>
+
+    <body>
+        <Header />
+
+        <article class="w-full h-full flex flex-col">
+            <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mt-32 text-center">
+                    <h1 class="text-4xl leading-tight text-slate-800 font-bold sm:text-5xl sm:leading-snug" transition:name="blog-title" transition:animate="slide">
+                        {title}
+                    </h1>
+
+                    <p class="text-md md:text-xl mt-4 text-slate-500">
+                        <FormattedDate date={publishDate} />
+                    </p>
+                </div>
+
+                <slot />
+            </div>
+        </article>
+
+        <Footer />
+    </body>
+</html>

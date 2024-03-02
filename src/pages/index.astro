@@ -1,0 +1,36 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '@consts';
+---
+
+<!doctype html>
+<html lang="en" class="min-h-screen">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body class="flex flex-col min-h-screen">
+        <Header />
+
+        <main class="w-full h-full flex flex-col items-center justify-center flex-grow">
+            <div class="w-full flex flex-col lg:w-9/12 mt-16 mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col w-full md:w-10/12 lg:max-w-[1140px]">
+                    <h1 class="text-4xl text-left font-semibold mb-4 sm:text-5xl">👋 Hi, my name is Max!</h1>
+
+                    <p class="text-xl">
+                        I'm a newly-educated <strong class="text-xl">backend developer</strong> from Skive, Denmark.<br /><br />
+
+                        I am a software developer, and the creator of a C# GraphQL library called <a href="https://github.com/maxnatamo/Chart" class="text-xl">Chart</a> and an MVC implementation
+                        called <a href="https://github.com/maxnatamo/Paracord" class="text-xl">Paracord</a>. Most of my projects are open source and can be found found on my GitHub.<br /><br />
+
+                        I have most of my experience from backend development, but I also work in some frontend development from time to time. I also do DevOps stuff daily on my home-server.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <Footer />
+    </body>
+</html>
