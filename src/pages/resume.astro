@@ -1,0 +1,165 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import NamedSection from '@components/Resume/NamedSection.astro';
+import ExperienceSection from '@components/Resume/ExperienceSection.astro';
+
+import {
+    SITE_TITLE,
+    SITE_DESCRIPTION,
+    CONTACT_INFO
+} from '@consts';
+
+const today = new Date();
+const birthday = new Date(2000, 6, 24);
+
+const currentAge = new Date(today.getTime() - birthday.getTime());
+const currentAgeInYears = currentAge.getFullYear() - 1970;
+---
+
+<!doctype html>
+<html lang="en" class="min-h-screen">
+    <head>
+        <BaseHead title={`Resumé - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+    </head>
+    <body class="flex flex-col min-h-screen">
+        <Header />
+
+        <article class="w-full h-full flex flex-col flex-grow">
+            <div class="w-full max-w-4xl flex flex-col items-center mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mt-32 text-center">
+                    <img src="profile.png" alt="Photograph of Max" class="w-36 h-36 object-center object-cover rounded-full mb-8" />
+
+                    <h1 class="text-4xl text-slate-800 font-bold sm:text-5xl">
+                        Max T. Kristiansen
+                    </h1>
+
+                    <p class="text-md mt-4 text-slate-500 md:text-xl">
+                        Software developer
+                    </p>
+
+                    <div class="flex flex-col items-center justify-center mt-4 text-slate-500 gap-2 sm:flex-row sm:gap-3">
+                        {
+                            CONTACT_INFO.map(contact => (
+                                <a
+                                    href={contact.link}
+                                    target="_blank"
+                                    class="
+                                        flex flex-row items-center gap-1
+                                        text-base font-normal text-slate-500
+                                        no-underline hover:no-underline"
+                                >
+                                    <span class={contact.icon}></span>
+
+                                    <p class="text-base leading-4 text-slate-500 align-middle m-0 mb-1">{contact.text}</p>
+                                </a>
+
+                                <span class="hidden last-of-type:hidden mb-1 sm:block">&bull;</span>
+                            ))
+                        }
+                    </div>
+
+                    <div class="flex flex-col">
+                        <NamedSection title="Profile">
+                            <p>I'm a {currentAgeInYears} year-old, passionate backend developer, with a very deep interest in almost anything in the field of IT. I am currently employed as a backend developer at Diviso ApS in Viborg.
+
+                                I work a lot with computers in my spare time and I spend a lot of time with immersing myself in something or learning something new.
+                            </p>
+                        </NamedSection>
+
+                        <NamedSection title="Skills">
+                            <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 md:gap-6 md:grid-cols-3">
+                                <div class="flex flex-col">
+                                    <h4>Processes</h4>
+
+                                    <p class="mt-0">In my schooltime, I have used SCRUM and Unified Process in multiple projects.</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <h4>Interface Design</h4>
+
+                                    <p class="mt-0">Good understanding about colors and the design-patterns of websites.</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <h4>Curiosity</h4>
+
+                                    <p class="mt-0">I'm always looking for new things that I can use, so I can use them in practice.</p>
+                                </div>
+                            </div>
+                        </NamedSection>
+
+                        <NamedSection title="Knowledge">
+                            <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 md:gap-6 md:grid-cols-3">
+                                <div class="flex flex-col">
+                                    <h4>Operating Systems</h4>
+
+                                    <p class="mt-0">I've used a mixture of all three major OSs for multiple years. Most of my development experience lies with Windows and Linux.</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <h4>Programming</h4>
+
+                                    <p class="mt-0">I spend most time with C#, but I also have experience in TypeScript, SQL, C/C++ and Assembly.</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <h4>DevOps</h4>
+
+                                    <p class="mt-0">Like most others, I use Git daily for contributing work. I also usually work with CI/CD, Docker and sometimes Kubernetes.</p>
+                                </div>
+                            </div>
+                        </NamedSection>
+
+                        <NamedSection title="Experience">
+                            <ExperienceSection
+                                title="Backend developer"
+                                institution="Diviso ApS"
+                                location="Viborg, Denmark"
+                                startDate="08/2023"
+                            >
+                                <ul class="mt-3">
+                                    <li>Created multiple sites and products for large customers using Umbraco, Blazor and ASP.NET Core.</li>
+                                    <li>Helped incorporate new products and technologies that has helped us speed up development speed.</li>
+                                    <li>Assisted in creating formal guidelines for working on customer projects  documentating processes.</li>
+                                </ul>
+                            </ExperienceSection>
+
+                            <ExperienceSection
+                                title="Intern / Junior developer"
+                                institution="Hella Gutmann Solutions A/S"
+                                location="Viborg, Denmark"
+                                startDate="08/2022"
+                                endDate="11/2022"
+                            >
+                                <ul class="mt-3">
+                                    <li>Learned practical skills and usage of agile processes, such as SCRUM and Unified Process.</li>
+                                    <li>Developed and maintained a GraphQL endpoint for external QA testers to use.</li>
+                                    <li>Helped introduce new technologies, such as GraphQL for data-fetching and Dapper.</li>
+                                    <li>Created multiple proof-of-concept applications to help integrate customers into our solutions.</li>
+                                </ul>
+                            </ExperienceSection>
+                        </NamedSection>
+
+                        <NamedSection title="Education">
+                            <ExperienceSection
+                                title="Computer Science"
+                                institution="Erhvervsakademi Dania"
+                                location="Skive, Denmark"
+                                startDate="08/2019"
+                                endDate="01/2024"
+                            />
+
+                            <ExperienceSection
+                                title="Game Design, HTX"
+                                institution="Mercantec"
+                                location="Viborg, Denmark"
+                                startDate="08/2016"
+                                endDate="12/2019"
+                            />
+                        </NamedSection>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <Footer />
+    </body>
+</html>

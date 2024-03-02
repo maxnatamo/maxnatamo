@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  institution: string;
+  location: string;
+
+  startDate: string;
+  endDate?: string;
+}
+
+const { title, institution: company, location, startDate, endDate } = Astro.props;
+---
+
+<section class="flex flex-col mb-4 last-of-type:mb-0">
+    <div class="flex flex-col">
+        <div class="flex flex-row items-center">
+            <h3 class="flex-grow text-left font-normal text-gray-800 m-0">
+                {title}
+
+                <span class="text-blue-400">@</span>
+
+                {company}
+            </h3>
+
+            <h3 class="text-sm font-normal text-gray-800 m-0">
+                {startDate} &ndash; {endDate}
+            </h3>
+        </div>
+
+        <h3 class="text-sm text-left font-normal text-gray-700 m-0">
+            {location}
+        </h3>
+    </div>
+
+    <slot />
+</section>

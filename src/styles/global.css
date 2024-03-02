@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background-color: white;
+}
+
+@layer base {
+    h1 {
+        @apply text-4xl font-bold text-slate-800 text-center mt-7 sm:text-3xl;
+    }
+
+    h2 {
+        @apply text-3xl font-bold text-slate-800 text-center mt-7 sm:text-2xl;
+    }
+
+    h3 {
+        @apply text-2xl font-bold text-slate-800 text-center mt-6 sm:text-xl;
+    }
+
+    h4 {
+        @apply text-xl font-bold text-slate-800 text-center mt-6 sm:text-lg;
+    }
+
+    p {
+        @apply text-base leading-7 text-slate-800 mt-4 lg:text-lg lg:mt-6;
+    }
+
+    strong {
+        @apply text-base font-bold text-slate-800 lg:text-lg;
+    }
+
+    a {
+        @apply text-base leading-7 font-bold text-primary lg:text-lg hover:underline;
+    }
+
+    img {
+        @apply mx-auto;
+    }
+
+    ul {
+        @apply list-disc ms-6;
+    }
+
+    li {
+        @apply text-base leading-7 text-slate-800 lg:text-lg;
+    }
+
+    pre {
+        @apply min-w-full flex flex-row;
+    }
+
+    code {
+        @apply w-full min-w-fit text-base text-slate-600 bg-slate-100 border border-slate-300 rounded-sm px-1;
+    }
+
+    blockquote {
+        @apply text-base text-slate-700 bg-slate-100 border-l-4 border-l-primary rounded-l px-6 py-5 mt-4 lg:text-lg lg:mt-6;
+    }
+
+    blockquote *:first-child {
+        @apply mt-0;
+    }
+}
