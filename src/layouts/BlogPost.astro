@@ -12,6 +12,7 @@ type Props = CollectionEntry<'blog'>['data'];
 
 const {
     title,
+    description,
     publishDate
 } = Astro.props;
 
@@ -19,7 +20,7 @@ const {
 
 <html lang="en">
     <head>
-        <BaseHead title={`${title} - ${SITE_TITLE}`} />
+        <BaseHead title={`${title} - ${SITE_TITLE}`} description={description} />
     </head>
 
     <body>

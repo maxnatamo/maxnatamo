@@ -29,17 +29,17 @@ const currentAgeInYears = currentAge.getFullYear() - 1970;
         <article class="w-full h-full flex flex-col flex-grow">
             <div class="w-full max-w-4xl flex flex-col items-center mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mt-32 text-center">
-                    <img src="/profile.png" alt="Photograph of Max" class="w-36 h-36 object-center object-cover rounded-full mb-8" />
+                    <img src="/profile.webp" alt="Photograph of Max" class="w-36 h-36 object-center object-cover rounded-full mb-8" />
 
                     <h1 class="text-4xl text-slate-800 font-bold sm:text-5xl">
                         Max T. Kristiansen
                     </h1>
 
-                    <p class="text-md mt-4 text-slate-500 md:text-xl">
+                    <p class="text-lg mt-2 text-slate-500 md:text-xl">
                         Software developer
                     </p>
 
-                    <div class="flex flex-col items-center justify-center mt-4 text-slate-500 gap-2 sm:flex-row sm:gap-3">
+                    <div class="flex flex-col items-center justify-center text-slate-500 gap-1 mt-4 sm:flex-row md:gap-0">
                         {
                             CONTACT_INFO.map(contact => (
                                 <a
@@ -50,9 +50,7 @@ const currentAgeInYears = currentAge.getFullYear() - 1970;
                                         text-base font-normal text-slate-500
                                         no-underline hover:no-underline"
                                 >
-                                    <span class={contact.icon}></span>
-
-                                    <p class="text-base leading-4 text-slate-500 align-middle m-0 mb-1">{contact.text}</p>
+                                    <p class="text-base leading-4 text-slate-500 align-middle px-2 py-1 m-0 mb-1">{contact.text}</p>
                                 </a>
 
                                 <span class="hidden last-of-type:hidden mb-1 sm:block">&bull;</span>
@@ -71,17 +69,17 @@ const currentAgeInYears = currentAge.getFullYear() - 1970;
                         <NamedSection title="Skills">
                             <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 md:gap-6 md:grid-cols-3">
                                 <div class="flex flex-col">
-                                    <h4>Processes</h4>
+                                    <p class="text-xl font-bold text-slate-800 text-center mt-4 sm:text-lg">Processes</p>
 
                                     <p class="mt-0">In my schooltime, I have used SCRUM and Unified Process in multiple projects.</p>
                                 </div>
                                 <div class="flex flex-col">
-                                    <h4>Interface Design</h4>
+                                    <p class="text-xl font-bold text-slate-800 text-center mt-4 sm:text-lg">Interface Design</p>
 
                                     <p class="mt-0">Good understanding about colors and the design-patterns of websites.</p>
                                 </div>
                                 <div class="flex flex-col">
-                                    <h4>Curiosity</h4>
+                                    <p class="text-xl font-bold text-slate-800 text-center mt-4 sm:text-lg">Curiosity</p>
 
                                     <p class="mt-0">I'm always looking for new things that I can use, so I can use them in practice.</p>
                                 </div>
@@ -91,17 +89,17 @@ const currentAgeInYears = currentAge.getFullYear() - 1970;
                         <NamedSection title="Knowledge">
                             <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 md:gap-6 md:grid-cols-3">
                                 <div class="flex flex-col">
-                                    <h4>Operating Systems</h4>
+                                    <p class="text-xl font-bold text-slate-800 text-center mt-4 sm:text-lg">Operating Systems</p>
 
                                     <p class="mt-0">I've used a mixture of all three major OSs for multiple years. Most of my development experience lies with Windows and Linux.</p>
                                 </div>
                                 <div class="flex flex-col">
-                                    <h4>Programming</h4>
+                                    <p class="text-xl font-bold text-slate-800 text-center mt-4 sm:text-lg">Programming</p>
 
                                     <p class="mt-0">I spend most time with C#, but I also have experience in TypeScript, SQL, C/C++ and Assembly.</p>
                                 </div>
                                 <div class="flex flex-col">
-                                    <h4>DevOps</h4>
+                                    <p class="text-xl font-bold text-slate-800 text-center mt-4 sm:text-lg">DevOps</p>
 
                                     <p class="mt-0">Like most others, I use Git daily for contributing work. I also usually work with CI/CD, Docker and sometimes Kubernetes.</p>
                                 </div>

@@ -37,7 +37,7 @@ const posts = (await getCollection('blog')).sort(
                     {
                         posts.map(post => (
                             <a href={`/blog/${post.slug}/`} class="hover:no-underline">
-                                <div class="flex flex-row rounded-sm transition p-3 hover:cursor-pointer hover:bg-gray-50">
+                                <div class="flex flex-col-reverse rounded-sm transition p-3 md:flex-row hover:cursor-pointer hover:bg-gray-50">
                                     <div class="flex flex-col justify-center flex-grow me-4">
                                         <p class="text-slate-800 text-xl font-bold mt-0 mb-3" transition:name="blog-title">
                                             {post.data.title}
@@ -57,7 +57,8 @@ const posts = (await getCollection('blog')).sort(
 
                                     <img
                                         src={post.data.thumbnail}
-                                        class="w-48 aspect-[1.5] object-cover object-center rounded-sm"
+                                        alt={post.data.thumbnailAlt}
+                                        class="w-full aspect-[1.5] object-cover object-center rounded-sm mb-3 md:w-48 md:mb-0"
                                     />
                                 </div>
                             </a>
