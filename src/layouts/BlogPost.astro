@@ -11,7 +11,6 @@ import { SITE_TITLE } from '@consts';
 type Props = CollectionEntry<'blog'>['data'];
 
 const {
-    slug,
     title,
     description,
     publishDate
@@ -30,7 +29,7 @@ const {
         <article class="w-full h-full flex flex-col">
             <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mt-32 text-center">
-                    <h1 class="text-4xl leading-tight text-slate-800 font-bold sm:text-5xl sm:leading-snug" transition:name={slug}>
+                    <h1 class="text-4xl leading-tight text-slate-800 font-bold sm:text-5xl sm:leading-snug" transition:name={title}>
                         {title}
                     </h1>
 
