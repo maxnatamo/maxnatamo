@@ -39,7 +39,7 @@ const posts = (await getCollection('blog')).sort(
                             <a href={`/blog/${post.slug}/`} class="hover:no-underline">
                                 <div class="flex flex-col-reverse rounded-sm transition p-3 md:flex-row hover:cursor-pointer hover:bg-gray-50">
                                     <div class="flex flex-col justify-center flex-grow me-4">
-                                        <p class="text-slate-800 text-xl font-bold mt-0 mb-3" transition:name="blog-title">
+                                        <p class="text-slate-800 text-xl font-bold mt-0 mb-3" transition:name={post.slug}>
                                             {post.data.title}
                                         </p>
 
