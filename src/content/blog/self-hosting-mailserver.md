@@ -12,7 +12,7 @@ thumbnailAlt: 'Icon of the Mail app on an iPad'
 >
 > Since the creation of this article, I have had numerous issues with large mail providers (namely Google and Microsoft) banning my mail server without any warning.
 >
-> This is obviously expected, since they don't have much reason to notify potential spammers that they've been blocked. But, it created a lot of friction when send an important e-mail, only to find that it was never received.
+> This is obviously expected, since they don't have much reason to notify potential spammers that they've been blocked. But, it created a lot of friction when I send an important e-mail, only to find that it was never received.
 >
 > While setting up a mail server like this can be interesting - and probably also align better with some of your own ideals - it is simply infeasible in the current day. And while it is an unfortunate reality, there's very little to do about to.
 >
