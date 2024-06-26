@@ -10,8 +10,9 @@ import puppeteer from 'puppeteer';
 
     await page.pdf({
         path: 'CV.pdf',
-        scale: 0.6,
-        margin: { top: 0, bottom: 0, left: 0, right: 0 }
+        scale: 0.7,
+        margin: { top: 0, bottom: 0, left: 0, right: 0 },
+        format: 'A4'
     });
 
     await browser.close();

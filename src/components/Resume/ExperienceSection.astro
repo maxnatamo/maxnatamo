@@ -18,13 +18,12 @@ const { title, institution: company, location, startDate, endDate } = Astro.prop
                 <span class="flex-grow">{title}</span>
 
                 <span class="text-blue-400">@</span>
-                <br class="sm:hidden" />
 
                 <span>{company}</span>
             </h3>
 
             <h3 class="text-sm font-normal text-gray-800 m-0">
-                {startDate} <br class="sm:hidden" /> &ndash; {endDate}
+                {startDate} &ndash; {endDate}
             </h3>
         </div>
 
