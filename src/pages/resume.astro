@@ -27,42 +27,46 @@ const currentAgeInYears = currentAge.getFullYear() - 1970;
         <Header />
 
         <article class="w-full h-full flex flex-col flex-grow">
-            <div class="w-full max-w-4xl flex flex-col items-center mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mt-32 text-center">
-                    <img src="/profile.webp" alt="Photograph of Max" class="w-36 h-36 object-center object-cover rounded-full mb-8" />
+            <div class="w-full max-w-4xl flex flex-col items-center mx-auto px-4 sm:px-6 lg:px-8 print:max-w-5xl">
+                <div class="mt-32 print:mt-16">
+                    <div class="flex flex-col text-center print:flex-row print:items-center">
+                        <img src="/profile.webp" alt="Photograph of Max" class="w-36 h-36 object-center object-cover rounded-full" />
 
-                    <h1 class="text-4xl text-slate-800 font-bold sm:text-5xl">
-                        Max T. Kristiansen
-                    </h1>
+                        <div class="text-center print:text-left print:flex-grow print:ms-8">
+                            <h1 class="text-4xl text-slate-800 font-bold sm:text-5xl print:mt-0 print:text-left">
+                                Max T. Kristiansen
+                            </h1>
 
-                    <p class="text-lg mt-2 text-slate-500 md:text-xl">
-                        Software developer
-                    </p>
+                            <p class="text-lg mt-2 text-slate-500 md:text-xl">
+                                Software developer
+                            </p>
 
-                    <div class="flex flex-col items-center justify-center text-slate-500 gap-1 mt-4 sm:flex-row md:gap-0">
-                        {
-                            CONTACT_INFO.map(contact => (
-                                <a
-                                    href={contact.link}
-                                    target="_blank"
-                                    class="
-                                        flex flex-row items-center gap-1
-                                        text-base font-normal text-slate-500
-                                        no-underline hover:no-underline"
-                                >
-                                    <p class="text-base leading-4 text-slate-500 align-middle px-2 py-1 m-0 mb-1">{contact.text}</p>
-                                </a>
+                            <div class="flex flex-col items-center justify-center text-slate-500 gap-0 mt-4 sm:flex-row md:gap-2 print:justify-start print:gap-2">
+                                {
+                                    CONTACT_INFO.map(contact => (
+                                        <a
+                                            href={contact.link}
+                                            target="_blank"
+                                            class="
+                                                flex flex-row items-center gap-1
+                                                text-base font-normal text-slate-500
+                                                no-underline hover:no-underline"
+                                        >
+                                            <p class="text-base leading-4 text-slate-500 align-middle py-1 m-0 mb-1">{contact.text}</p>
+                                        </a>
 
-                                <span class="hidden last-of-type:hidden mb-1 sm:block">&bull;</span>
-                            ))
-                        }
+                                        <span class="hidden last-of-type:hidden mb-1 sm:block">&bull;</span>
+                                    ))
+                                }
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="flex flex-col">
+                    <div class="flex flex-col mt-8 print:mt-2">
                         <NamedSection title="Profile">
-                            <p>I'm a {currentAgeInYears} year-old, passionate backend developer, with a very deep interest in almost anything in the field of IT. I am currently employed as a backend developer at Diviso ApS in Viborg.
+                            <p>I'm a {currentAgeInYears} year-old, passionate backend developer, with a very deep interest in almost anything in the field of IT. I take much pride in my work being the best that I can make it, instead of completing it as fast as I can. Because of this, I've successfully made multiple software solutions, which were easily adaptable to new requirements.
 
-                                I work a lot with computers in my spare time and I spend a lot of time with immersing myself in something or learning something new.
+                                I work a lot with computers in my spare time and I spend a lot of time with immersing myself in something or learning something new. This has allowed me to hone my skills in a great variety of subjects, including, but not limited to, microservices, authentication, data parsing, emulation, networking and more.
                             </p>
                         </NamedSection>
 
