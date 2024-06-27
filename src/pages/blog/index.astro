@@ -54,12 +54,6 @@ const posts = (await getCollection('blog')).sort(
                                             />
                                         </div>
                                     </div>
-
-                                    <img
-                                        src={post.data.thumbnail}
-                                        alt={post.data.thumbnailAlt}
-                                        class="w-full aspect-[1.5] object-cover object-center rounded-sm mb-3 md:w-48 md:mb-0"
-                                    />
                                 </div>
                             </a>
                         ))
