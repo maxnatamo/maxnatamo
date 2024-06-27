@@ -1,0 +1,23 @@
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+      - run: npm ci
+      - run: node print-pdf.js
+      - name: Create release
+        uses: actions/create-release@v1
+        with:
+          artifacts: "CV.pdf"
