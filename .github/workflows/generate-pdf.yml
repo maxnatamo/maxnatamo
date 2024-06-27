@@ -21,3 +21,5 @@ jobs:
         uses: actions/create-release@v1
         with:
           artifacts: "CV.pdf"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
