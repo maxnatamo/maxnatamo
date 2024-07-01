@@ -55,8 +55,40 @@ body {
         @apply min-w-full flex flex-row;
     }
 
-    code {
-        @apply w-full min-w-fit text-base text-slate-600 bg-slate-100 border border-slate-300 rounded-sm px-1;
+    code, code * {
+        @apply w-full min-w-fit font-mono text-base text-slate-600 bg-slate-800 rounded-sm;
+    }
+
+    code:not([class^="language-"]) {
+        @apply px-[3px] py-1.5 bg-slate-100;
+    }
+
+    pre[class^="language-"] {
+        @apply text-slate-200 bg-slate-800 p-4 my-2 rounded-lg overflow-x-auto;
+    }
+
+    pre[class^="language-"] * {
+        @apply text-inherit;
+    }
+    
+    span.token.string {
+        @apply text-[#f1fa8c];
+    }
+    
+    span.token.boolean, span.token.keyword {
+        @apply text-[#bd93f9];
+    }
+    
+    span.token.operator {
+        @apply text-[#ffb86c];
+    }
+    
+    span.token.key {
+        @apply text-[#8be9fd];
+    }
+    
+    span.token.comment {
+        @apply text-[#6272a4];
     }
 
     blockquote {
