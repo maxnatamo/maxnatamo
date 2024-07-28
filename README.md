@@ -18,7 +18,7 @@
 
 * 📍 Originating and currently living in Denmark.
 * ☕ Still trying to learn to drink coffee.
-* 👨🏽‍💻 I'm currently working on <a href="https://github.com/maxnatamo/Chart">Chart</a> and a secret private project.
+* 👨🏽‍💻 I'm currently working on <a href="https://github.com/maxnatamo/Chart">Chart</a> and a bunch of other smaller projects.
 * 🔨 I'm learning about CI/CD (via GitLab CI) and Kubernetes (via ArgoCD).
 
 I'm a newly-educated backend developer from Skive, Denmark.
