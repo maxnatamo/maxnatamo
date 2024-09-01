@@ -1,0 +1,7 @@
+{
+  "name": "Chart",
+  "summary": "A GraphQL execution engine, written in C#",
+  "link": "https://github.com/maxnatamo/chart",
+  "emoji": "📈",
+  "order": 1
+}

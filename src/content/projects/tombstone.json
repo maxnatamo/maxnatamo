@@ -1,0 +1,7 @@
+{
+  "name": "Tombstone",
+  "summary": "Dead code analyzer for .NET Core",
+  "link": "https://github.com/maxnatamo/Tombstone",
+  "emoji": "🪦",
+  "order": 6
+}
