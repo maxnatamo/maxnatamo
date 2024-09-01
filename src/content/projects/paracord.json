@@ -1,0 +1,7 @@
+{
+  "name": "Paracord",
+  "summary": "An HTTP server implementation in .NET Core",
+  "link": "https://github.com/maxnatamo/Paracord",
+  "emoji": "🪢",
+  "order": 2
+}

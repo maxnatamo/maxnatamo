@@ -1,0 +1,7 @@
+{
+  "name": "Fetcharr",
+  "summary": "Automatically sync Plex watchlists to Sonarr and Radarr",
+  "link": "https://github.com/Fetcharr/fetcharr",
+  "emoji": "🫳",
+  "order": 3
+}
