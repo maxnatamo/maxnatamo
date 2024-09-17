@@ -3,7 +3,7 @@ title: 📨 Set up your own Mailserver in 2022
 description: Dive into setting up DNS for a self-hosted mail server.
 publishDate: 'Mar 26 2022'
 ---
-    
+
 > **Update from March 3rd, 2024**
 >
 > This article is rather old and has not aged as well, as I'd hoped.
@@ -12,7 +12,7 @@ publishDate: 'Mar 26 2022'
 >
 > This is obviously expected, since they don't have much reason to notify potential spammers that they've been blocked. But, it created a lot of friction when I send an important e-mail, only to find that it was never received.
 >
-> While setting up a mail server like this can be interesting - and probably also align better with some of your own ideals - it is simply infeasible in the current day. And while it is an unfortunate reality, there's very little to do about to.
+> While setting up a mail server like this can be interesting - and might also align better with some of your own ideals - it is simply infeasible in the current day. And while it is an unfortunate reality, there's very little to do about it.
 >
 > Depending on your needs, I recommend using one of the larger mail providers. Some of them have features that are more catered to privacy-focused individuals; namely [Tuta](https://tuta.com/), [mailbox](https://mailbox.org/en/), [FastMail](https://www.fastmail.com/) (although I haven't used any of these).
 
@@ -22,7 +22,7 @@ E-mail is ancient and complex. You're going to see what I mean, when you're done
 
 Well, there might be many reasons to host your mail-server. You want ultimate control, you have an organization that requires it or, like me, you want to self-host as much as possible. Maybe you want to use e-mail like it was supposed to, decentralized. Whatever your reason, you might find some useful tips here.
 
-I've recently setup a (relatively) complete mail-server. Most of the work was done for me, however, so I never needed to fumble around with configuration files or anything. Most of the work comes from setting up DNS-records, firewalls and removing myself from blocklists. You know, the fun stuff. 
+I've recently setup a (relatively) complete mail-server. Most of the work was done for me, however, so I never needed to fumble around with configuration files or anything. Most of the work comes from setting up DNS-records, firewalls and removing myself from blocklists. You know, the fun stuff.
 
 This article isn't about setting up Postfix, Dovecot, etc. Don't worry, you don't need to mess around with configuration files, if you don't want to. We will use prebuilt solutions, which are (F)OSS. Currently, all solutions are free, both for individuals and commercially. This might change in the future, however, so check the license, if unsure.
 
@@ -56,7 +56,7 @@ For most compatibility, we're going to prioritize Docker-compatible solutions. N
 The most popular solutions:
 
 - [Mail-in-a-Box](https://mailinabox.email/)
-    - Mail-in-a-Box requires a machine, dedicated to run the mail-server, which is very limiting. 
+    - Mail-in-a-Box requires a machine, dedicated to run the mail-server, which is very limiting.
     - Not Dockerized. While third-party images are available, development seems to have halted.
 
 - [Mailcow](https://mailcow.email/)
@@ -113,13 +113,13 @@ First things first, A-record. DNS A-records are used to resolve an IP-address (1
 
 ![](/mailserver/mail_a.webp "")
 
-Ensure the *Type* is set to A. If needed, you can add a AAAA-record for IPv6. I won't do this, since I don't have IPv6 networking. Under *Name*, write your mail-subdomain name. On Cloudflare, you don't need to write the entire domain name, only the subdomain part. On *IPv4 address*, input your VPS' IPv4-address. 
+Ensure the *Type* is set to A. If needed, you can add a AAAA-record for IPv6. I won't do this, since I don't have IPv6 networking. Under *Name*, write your mail-subdomain name. On Cloudflare, you don't need to write the entire domain name, only the subdomain part. On *IPv4 address*, input your VPS' IPv4-address.
 
-**Note**: If you want, you can proxy the entire website through Cloudflare. This can help prevent DDoS attacks and hide your VPS' IP. However, for mail-servers, this is usually a bad idea. You risk your e-mail not being delivered or having errors. 
+**Note**: If you want, you can proxy the entire website through Cloudflare. This can help prevent DDoS attacks and hide your VPS' IP. However, for mail-servers, this is usually a bad idea. You risk your e-mail not being delivered or having errors.
 
 ### MX-Record
 
-Next, MX-record. This determines which domains can handle e-mails for your root-domain. So, when you send an e-mail to *admin@domain.com*, a mail-server will handle that e-mail. This mail-server is determined from the MX-record. Multiple MX-records can be added for redundancy and load-balancing. That's why you can specify a *Priority*. Multiple MX-records can have the same Priority, which will split the load evenly. 
+Next, MX-record. This determines which domains can handle e-mails for your root-domain. So, when you send an e-mail to *admin@domain.com*, a mail-server will handle that e-mail. This mail-server is determined from the MX-record. Multiple MX-records can be added for redundancy and load-balancing. That's why you can specify a *Priority*. Multiple MX-records can have the same Priority, which will split the load evenly.
 
 ![](/mailserver/mail_mx.webp "")
 
@@ -178,7 +178,7 @@ Let's start by allowing our root-domain to send mail.
 
 ![](/mailserver/root_spf.webp "")
 
-Again, ensure *Type* is set to TXT. Under *Name*, write the root-domain name or *@*, if using Cloudflare. This will match mails like *admin@maxtrier.dk*, but not *admin@mail.maxrier.dk*. If you want to use a subdomain in your mail, write that subdomain in *Name*. 
+Again, ensure *Type* is set to TXT. Under *Name*, write the root-domain name or *@*, if using Cloudflare. This will match mails like *admin@maxtrier.dk*, but not *admin@mail.maxrier.dk*. If you want to use a subdomain in your mail, write that subdomain in *Name*.
 
 Now, under *Content*, we need to specify a tiny bit.
 
@@ -204,7 +204,7 @@ Here, we don't match anything. Simply drop all mails coming from *www.maxtrier.d
 
 Next, *DomainKeys Identified Mail* (DKIM). DKIM is used to determine whether an email came from the sending domain or if it was forged. DKIM uses a cryptographic keypair, which includes a *private key* and a *public key*. The public key is included in a TXT-record on the root-domain. The receiver can then verify the sender of the mail.
 
-DKIM keys are usually handled by your mail-solution. It will therefore change with each solution. Since I use Mailu, I'll show how to get the DKIM public from there. If you're using any other solution, read the documentation or fumble around with the admin control panel. 
+DKIM keys are usually handled by your mail-solution. It will therefore change with each solution. Since I use Mailu, I'll show how to get the DKIM public from there. If you're using any other solution, read the documentation or fumble around with the admin control panel.
 
 **In Mailu:** The DKIM public key is found at Admin Panel > Mail Domains > Details (in the table) > DKIM public key
 
@@ -316,9 +316,9 @@ Finally done, yeah? Well, you're never really done with a mail-server. Now, ther
 
 **[MXToolbox](https://mxtoolbox.com/)**
 
-* This tool is amazing. It can detect pretty much any fails or non-optimized values in your DNS, configuration, etc. Some of the tools you should try from here are MX Lookup (note: enter your root-domain here), Blacklist Lookup, SPF/DKIM/DMARC Lookup, and Email Deliverability. 
+* This tool is amazing. It can detect pretty much any fails or non-optimized values in your DNS, configuration, etc. Some of the tools you should try from here are MX Lookup (note: enter your root-domain here), Blacklist Lookup, SPF/DKIM/DMARC Lookup, and Email Deliverability.
 
-* **Note**: When using the Blacklist-lookup, you might see your IP on some of these blocklists. That's expected, if you have a VPS. Most of them have a coporate way of delisting yourself. There are, however, a couple that you shouldn't bother with. This is mostly Blacklists that ask for money to unlist you. This includes UCEPROTECTL2/UCEPROTECTL3. Don't bother, they're scammers. Others are just super old. 
+* **Note**: When using the Blacklist-lookup, you might see your IP on some of these blocklists. That's expected, if you have a VPS. Most of them have a coporate way of delisting yourself. There are, however, a couple that you shouldn't bother with. This is mostly Blacklists that ask for money to unlist you. This includes UCEPROTECTL2/UCEPROTECTL3. Don't bother, they're scammers. Others are just super old.
 
 **[Mail-Tester](https://www.mail-tester.com/)**
 
