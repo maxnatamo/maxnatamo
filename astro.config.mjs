@@ -16,6 +16,9 @@ export default defineConfig({
       theme: 'github-light',
       wrap: false
     },
-    remarkPlugins: [remarkPrism]
+    remarkPlugins: [remarkPrism],
+    remarkRehype: {
+      footnoteBackContent: "^"
+    },
   }
 });

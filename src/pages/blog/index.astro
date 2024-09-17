@@ -43,14 +43,14 @@ const posts = (await getCollection('blog')).sort(
                                             {post.data.title}
                                         </p>
 
-                                        <p class="max-h-10 text-slate-500 text-base leading-4 line-clamp-2 font-medium text-ellipsis mt-0 mb-1">
+                                        <p class="max-h-10 text-slate-500 text-base leading-5 line-clamp-2 font-medium text-ellipsis mt-0 mb-1">
                                             {post.data.description}
                                         </p>
 
                                         <div class="flex flex-row">
                                             <FormattedDate
                                                 date={post.data.publishDate}
-                                                className="text-slate-500 text-sm font-medium"
+                                                className="text-slate-400 text-sm font-medium"
                                             />
                                         </div>
                                     </div>
