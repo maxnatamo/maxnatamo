@@ -27,6 +27,10 @@ body {
         @apply text-xl font-bold text-slate-800 text-center mt-6 sm:text-lg;
     }
 
+    section[data-footnotes] h2#footnote-label {
+        @apply text-xl font-bold text-slate-700 text-center mt-6 -mb-4 sm:text-lg;
+    }
+
     p {
         @apply text-base leading-7 text-slate-800 mt-4 lg:text-lg lg:mt-6;
     }
@@ -39,6 +43,10 @@ body {
         @apply text-base leading-7 font-bold text-primary lg:text-lg hover:underline;
     }
 
+    a[data-footnote-ref] {
+        @apply text-sm leading-7 text-primary lg:text-base hover:underline;
+    }
+
     img {
         @apply mx-auto;
     }
@@ -49,6 +57,10 @@ body {
 
     li {
         @apply text-base leading-7 text-slate-800 lg:text-lg;
+    }
+
+    section[data-footnotes] ol {
+        @apply list-decimal list-outside ms-8 me-3;
     }
 
     pre {
@@ -70,23 +82,23 @@ body {
     pre[class^="language-"] * {
         @apply text-inherit;
     }
-    
+
     span.token.string {
         @apply text-[#f1fa8c];
     }
-    
+
     span.token.boolean, span.token.keyword {
         @apply text-[#bd93f9];
     }
-    
+
     span.token.operator {
         @apply text-[#ffb86c];
     }
-    
+
     span.token.key {
         @apply text-[#8be9fd];
     }
-    
+
     span.token.comment {
         @apply text-[#6272a4];
     }
