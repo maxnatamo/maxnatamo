@@ -110,4 +110,8 @@ body {
     blockquote *:first-child {
         @apply mt-0;
     }
+
+    div.utterances {
+        @apply mt-8;
+    }
 }
