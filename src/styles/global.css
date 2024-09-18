@@ -27,7 +27,7 @@ body {
         @apply text-xl font-bold text-slate-800 text-center mt-6 sm:text-lg;
     }
 
-    section[data-footnotes] h2#footnote-label {
+    section[data-footnotes] h2#footnote-label, h2#comments-label {
         @apply text-xl font-bold text-slate-700 text-center mt-6 -mb-4 sm:text-lg;
     }
 
@@ -109,9 +109,5 @@ body {
 
     blockquote *:first-child {
         @apply mt-0;
-    }
-
-    div.utterances {
-        @apply mt-8;
     }
 }
