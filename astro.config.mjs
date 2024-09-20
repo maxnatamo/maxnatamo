@@ -10,6 +10,7 @@ import remarkPrism from 'remark-prism';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://maxtrier.dk',
+  prefetch: true,
   integrations: [mdx(), sitemap(), tailwind(), compress()],
   markdown: {
     shikiConfig: {
