@@ -2,11 +2,12 @@
 title: 🏗️ Using Terraform and GitLab CI together with Managed State and IaC
 description: Centralize your Terraform state and manage it on Gitlab.
 publishDate: 'Mar 27 2023'
+category: tech
 ---
 
 ## Preface
 
-I currently use GitOps for my deployments to Kubernetes and Docker containers on my home server. My goal is 
+I currently use GitOps for my deployments to Kubernetes and Docker containers on my home server. My goal is
 to possibly make a somewhat 'production-grade' setup, even though it's hosted on bare-metal at home.
 
 To facilitate that, I use Hashicorp Terraform to setup my Kubernetes cluster from scratch. This has several advantages:
@@ -14,10 +15,10 @@ To facilitate that, I use Hashicorp Terraform to setup my Kubernetes cluster fro
 * It makes server provisioning and setup less manual, minimizing human error
 * Faster deployment on new servers, with identical configuration
 
-I, as a single developer, don't take advantage of some of these, as I only have one server and a small DevOps budget. But, the 
+I, as a single developer, don't take advantage of some of these, as I only have one server and a small DevOps budget. But, the
 concepts scale all the way to multi-cluster setups.
 
-As part of using Terraform, it's nice to automatically provision new hardware, when such a state is desired. This can inherently be done 
+As part of using Terraform, it's nice to automatically provision new hardware, when such a state is desired. This can inherently be done
 by all build- and CI-systems, but I like to use GitLab CI, for it's seamless integration with GitLab and it's simplicity.
 
 ### Managed State
