@@ -2,6 +2,7 @@
 title: 📨 Set up your own Mailserver in 2022
 description: Dive into setting up DNS for a self-hosted mail server.
 publishDate: 'Mar 26 2022'
+category: tech
 ---
 
 > **Update from March 3rd, 2024**

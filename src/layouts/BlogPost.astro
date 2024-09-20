@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 import BaseHead from '@components/BaseHead.astro';
@@ -13,8 +14,11 @@ type Props = CollectionEntry<'blog'>['data'];
 const {
     title,
     description,
-    publishDate
+    publishDate,
+    category
 } = Astro.props;
+
+const { data: postCategory } = await getEntry(category) as any;
 
 ---
 
@@ -33,9 +37,16 @@ const {
                         {title}
                     </h1>
 
-                    <p class="text-md md:text-xl mt-4 text-slate-500">
+                    <p class="text-slate-500 text-md md:text-xl mt-4 mb-1">
                         <FormattedDate date={publishDate} />
                     </p>
+
+                    <span
+                        class="text-red-400 text-base font-medium"
+                        style=`color: ${postCategory.color}`
+                    >
+                        {postCategory.name}
+                    </span>
                 </div>
 
                 <slot />
