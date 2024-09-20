@@ -1,7 +1,7 @@
 import { defineCollection, reference, z } from 'astro:content';
 
 const categories = defineCollection({
-	type: 'content',
+	type: 'data',
 	schema: z.object({
 		name: z.string(),
 		color: z.string(),
