@@ -19,11 +19,11 @@ I, as a single developer, don't take advantage of some of these, as I only have 
 concepts scale all the way to multi-cluster setups.
 
 As part of using Terraform, it's nice to automatically provision new hardware, when such a state is desired. This can inherently be done
-by all build- and CI-systems, but I like to use GitLab CI, for it's seamless integration with GitLab and it's simplicity.
+by all build systems, but I like to use GitLab CI, for it's seamless integration with GitLab and it's simplicity.
 
 ### Managed State
 
-Terraform uses states to make sure no resource is provisioned twice. This is much like the desired-state/current-state of Kubernetes, where you'd want the to to match.
+Terraform uses states to make sure no resource is provisioned twice. This is much like the desired-state/current-state of Kubernetes, where you'd want the to match.
 Instead of saving the state in a daemon, Terraform saves it in a `terraform.tfstate`-file. This is fine for a single developer, but it falls apart when multiple developers and/or multiple machines are used to deploy.
 
 For that reason, GitLab has a option for *Terraform Managed State*. This will save the Terraform state on GitLab itself, which will persist through builds.
@@ -36,7 +36,7 @@ For more information, read the [official documentation](https://docs.gitlab.com/
 
 I've decided to create a simple Terraform project, just for this example. I won't include everything, as you can probably guess yourself to most of the providers, configurations, etc.
 
-The main file we should think about, is `main.tf`:
+The main file to think about is `main.tf`:
 ```js
 # Create MetalLB namespace
 resource "kubernetes_namespace" "metallb" {
@@ -99,7 +99,7 @@ YAML
 }
 ```
 
-For reference, this will be our `variables.tf`:
+For reference, this will be the `variables.tf`:
 ```js
 variable "addr_pool_name" {
   type        = string
@@ -114,7 +114,7 @@ variable "addr_pool_range" {
 }
 ```
 
-It should be noted, that GitLab requires the `http`-backend to be enabled, as well:
+It should be noted, that GitLab requires the `http` back-end to be enabled, as well:
 
 `versions.tf`
 ```js
@@ -136,9 +136,9 @@ A possible folder structure for something like this might be:
   └ versions.tf
 ```
 
-## Initalizing Managed State
+## Initializing Managed State
 
-As per the GitLab documentation, it is smart to initialize your Managed State before you commit your `.gitlab-ci.yml`. You can do like this, [reference](https://docs.gitlab.com/ee/user/infrastructure/iac/terraform_state.html#set-up-the-initial-backend):
+Per the GitLab documentation, it's smart to initialize your Managed State before you commit your `.gitlab-ci.yml`. You can do like this, [reference](https://docs.gitlab.com/ee/user/infrastructure/iac/terraform_state.html#set-up-the-initial-backend):
 
 ```sh
 PROJECT_ID="<gitlab-project-id>"
@@ -165,11 +165,11 @@ If you want to see the plan for the deployment, run
 terraform plan
 ```
 
-## .gitlab-ci.yml
+## `.gitlab-ci.yml`
 
-Now that we have a valid state on GitLab and a working Terraform module, we can setup our CI/CD configuration.
+Now that GitLab has a valid state and a working Terraform module, it's time to setup the CI/CD configuration.
 
-For the bare-minimum, we can use the `gitlab-terraform` wrapper from GitLab:
+For the bare-minimum, you can use the `gitlab-terraform` wrapper from GitLab:
 ```yml
 stages:
   - prepare
@@ -255,9 +255,9 @@ This pipeline will use all the default values specified in the Terraform `variab
 
 Simply prepend `TF_VAR_` to the variable name, and Terraform will fill in the new value. In this example, the values are defined as CI/CD variables.
 
-## Remote data backend
+## Remote data back-end
 
-While this solves most problems, we still have decentralized states. One on GitLab and one locally. To make up for that, we can define GitLab as a remote data source for our state:
+While this solves most problems, the state is still decentralized. One on GitLab and one locally. To make up for that, define GitLab as a remote data source for the state:
 
 `variables.tf`
 ```js
