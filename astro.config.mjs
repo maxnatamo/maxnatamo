@@ -22,5 +22,10 @@ export default defineConfig({
     remarkRehype: {
       footnoteBackContent: "^"
     },
+  },
+  redirects: {
+    "/blog/self-hosting-mailserver": "/blog/2022/03/self-hosting-mailserver",
+    "/blog/nintendo-ds-save-dumping": "/blog/2022/07/nintendo-ds-save-dumping",
+    "/blog/gitlab-terraform-state": "/blog/2023/03/gitlab-terraform-state",
   }
 });
