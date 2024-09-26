@@ -6,6 +6,7 @@ import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
 
 import remarkPrism from 'remark-prism';
+import remarkSectionize from 'remark-sectionize';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,7 +18,7 @@ export default defineConfig({
       theme: 'github-light',
       wrap: false
     },
-    remarkPlugins: [remarkPrism],
+    remarkPlugins: [remarkPrism, remarkSectionize],
     remarkRehype: {
       footnoteBackContent: "^"
     },

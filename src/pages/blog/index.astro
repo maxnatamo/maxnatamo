@@ -18,26 +18,24 @@ const posts = (await getCollection('blog')).sort(
     <head>
         <BaseHead title={`Blog - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
     </head>
-    <body class="flex flex-col min-h-screen">
+    <body class="flex flex-col w-full min-h-screen">
         <Header />
 
-        <article class="w-full h-full flex flex-col flex-grow">
-            <div class="w-full max-w-4xl flex flex-col items-center mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mt-32 text-center">
-                    <h1 class="text-4xl sm:text-5xl text-slate-800 font-bold">
-                        Blog
-                    </h1>
+        <main class="w-full max-w-4xl h-full flex flex-col flex-grow items-center mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mt-32 text-center">
+                <h1 class="text-4xl sm:text-5xl text-slate-800 font-bold">
+                    Blog
+                </h1>
 
-                    <p class="text-md md:text-xl mt-4 text-slate-500">
-                        Just my little corner of the world.
-                    </p>
-                </div>
-
-                <div class="w-full max-w-3xl flex flex-col gap-4 mt-16">
-                    {posts.map(async post => <Entry post={post} /> )}
-                </div>
+                <p class="text-md md:text-xl mt-4 text-slate-500">
+                    Just my little corner of the world.
+                </p>
             </div>
-        </article>
+
+            <article class="w-full max-w-3xl flex flex-col gap-4 mt-16">
+                {posts.map(async post => <Entry post={post} /> )}
+            </article>
+        </main>
 
         <Footer />
     </body>

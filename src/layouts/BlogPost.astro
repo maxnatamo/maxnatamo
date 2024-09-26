@@ -36,27 +36,25 @@ const blogIssueUrl = `https://github.com/maxnatamo/maxnatamo/issues?q=${encodeUR
     <body>
         <Header />
 
-        <article class="w-full h-full flex flex-col">
-            <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mt-32 text-center">
-                    <h1 class="text-4xl leading-tight text-slate-800 font-bold sm:text-5xl sm:leading-snug" transition:name={title}>
-                        {title}
-                    </h1>
+        <article class="w-full max-w-4xl h-full flex flex-col mx-auto px-4 sm:px-6 lg:px-8" id="immersive-reader-content">
+            <aside class="mt-32 text-center">
+                <h1 class="text-4xl leading-tight text-slate-800 font-bold sm:text-5xl sm:leading-snug" transition:name={title}>
+                    {title}
+                </h1>
 
-                    <p class="text-slate-500 text-md md:text-xl mt-4 mb-1">
-                        <FormattedDate date={publishDate} />
-                    </p>
+                <p class="text-slate-500 text-md md:text-xl mt-4 mb-1">
+                    <FormattedDate date={publishDate} />
+                </p>
 
-                    <span
-                        class="text-red-400 text-base font-medium"
-                        style=`color: ${postCategory.color}`
-                    >
-                        {postCategory.name}
-                    </span>
-                </div>
+                <span
+                    class="text-red-400 text-base font-medium"
+                    style=`color: ${postCategory.color}`
+                >
+                    {postCategory.name}
+                </span>
+            </aside>
 
-                <slot />
-            </div>
+            <slot />
         </article>
 
         <noscript>
