@@ -3,6 +3,10 @@ title: 🤐 Joining personal life into a tech blog
 description: When should someone consider mixing their own personal life into a blog?
 publishDate: 'Sep 17 2024'
 category: life
+tags:
+  - opinion-piece
+  - personal
+  - ranting
 ---
 
 ## When to merge your lives

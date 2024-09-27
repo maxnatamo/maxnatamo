@@ -3,6 +3,10 @@ title: 🙋‍♂️ Misconceptions about EF Core
 description: Listing some of my pet grievances about others misunderstanding EF Core.
 publishDate: 'Sep 25 2024'
 category: tech
+tags:
+  - ranting
+  - ef-core
+  - opinion-piece
 ---
 
 <!-- vale Microsoft.Adverbs = NO -->

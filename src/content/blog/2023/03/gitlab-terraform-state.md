@@ -3,6 +3,11 @@ title: 🏗️ Using Terraform and GitLab CI together with Managed State and IaC
 description: Centralize your Terraform state and manage it on Gitlab.
 publishDate: 'Mar 27 2023'
 category: tech
+tags:
+  - ci-cd
+  - infrastructure-as-code
+  - terraform
+  - gitlab
 ---
 
 ## Preface

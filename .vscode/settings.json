@@ -1,4 +1,6 @@
 {
+  "editor.indentSize": "tabSize",
+  "editor.tabSize": 2,
   "[mdx][markdown][markdown_latex_combined]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 160,

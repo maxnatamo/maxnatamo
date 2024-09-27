@@ -1,68 +1,80 @@
 ---
-import { getEntry } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
+import { getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
-import BaseHead from '@components/BaseHead.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import FormattedDate from '@components/FormattedDate.astro';
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import FormattedDate from "@components/FormattedDate.astro";
 
-import { SITE_TITLE } from '@consts';
-import ProTip from '@components/ProTip.astro';
+import { SITE_TITLE } from "@consts";
+import ProTip from "@components/ProTip.astro";
 
-type Props = CollectionEntry<'blog'>['data'] & {
-    path: string
+type Props = CollectionEntry<"blog">["data"] & {
+  path: string;
 };
 
-const {
-    title,
-    description,
-    publishDate,
-    category,
-    path
-} = Astro.props;
+const { title, description, publishDate, category, path, tags } = Astro.props;
 
-const { data: postCategory } = await getEntry(category) as any;
+const { data: postCategory } = (await getEntry(category)) as any;
 const blogIssueSearch = `is:issue is:open blog/${path}/`;
 const blogIssueUrl = `https://github.com/maxnatamo/maxnatamo/issues?q=${encodeURIComponent(blogIssueSearch)}`;
-
 ---
 
 <html lang="en">
-    <head>
-        <BaseHead title={`${title} - ${SITE_TITLE}`} description={description} />
-    </head>
+  <head>
+    <BaseHead title={`${title} - ${SITE_TITLE}`} description={description} />
+  </head>
 
-    <body>
-        <Header />
+  <body>
+    <Header />
 
-        <article class="w-full max-w-4xl h-full flex flex-col mx-auto px-4 sm:px-6 lg:px-8" id="immersive-reader-content">
-            <aside class="mt-32 text-center">
-                <h1 class="text-4xl leading-tight text-slate-800 font-bold sm:text-5xl sm:leading-snug" transition:name={title}>
-                    {title}
-                </h1>
+    <article
+      class="w-full max-w-4xl h-full flex flex-col mx-auto px-4 sm:px-6 lg:px-8"
+      id="immersive-reader-content"
+    >
+      <aside class="mt-32 text-center">
+        <h1
+          class="text-4xl leading-tight text-slate-800 font-bold sm:text-5xl sm:leading-snug"
+          transition:name={title}
+        >
+          {title}
+        </h1>
 
-                <p class="text-slate-500 text-md md:text-xl mt-4 mb-1">
-                    <FormattedDate date={publishDate} />
-                </p>
+        <div class="text-slate-400 text-md md:text-xl mt-4 mb-1">
+          <FormattedDate date={publishDate} className="text-slate-500" />
+          in
+          <a href="#">
+            <span class="font-medium" style={`color: ${postCategory.color}`}
+              >{postCategory.name}</span
+            >
+          </a>
+        </div>
 
-                <span
-                    class="text-red-400 text-base font-medium"
-                    style=`color: ${postCategory.color}`
-                >
-                    {postCategory.name}
+        <div class="flex flex-row justify-center gap-2">
+          {
+            tags.map((tag) => (
+              <a href={`/blog/tag/${tag}`}>
+                <span class="text-gray-600 text-base font-medium hover:text-gray-400 active:text-primary">
+                  #{tag}
                 </span>
-            </aside>
+              </a>
+            ))
+          }
+        </div>
+      </aside>
 
-            <slot />
-        </article>
+      <slot />
+    </article>
 
-        <noscript>
-            <ProTip>
-                Even without JavaScript, you can still comment on <a href={blogIssueUrl}>GitHub.</a>
-            </ProTip>
-        </noscript>
+    <noscript>
+      <ProTip>
+        Even without JavaScript, you can still comment on <a href={blogIssueUrl}
+          >GitHub.</a
+        >
+      </ProTip>
+    </noscript>
 
-        <Footer />
-    </body>
+    <Footer />
+  </body>
 </html>

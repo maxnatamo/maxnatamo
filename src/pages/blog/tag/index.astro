@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseHead from "@components/BaseHead.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@consts";
+
+const posts = (await getCollection('blog'))
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+const tags = posts.flatMap(post => post.data.tags);
+---
+
+<!doctype html>
+<html lang="en" class="min-h-screen">
+    <head>
+        <BaseHead title={`Blog - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+    </head>
+    <body class="flex flex-col w-full min-h-screen">
+        <Header />
+
+        <main class="w-full max-w-4xl h-full flex flex-col flex-grow items-center mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mt-32 text-center">
+                <h1 class="text-4xl sm:text-5xl text-slate-800 font-bold">
+                    Blog
+                </h1>
+
+                <p class="text-md md:text-xl mt-4 text-slate-500">
+                    Just my little corner of the world.
+                </p>
+            </div>
+
+            <article class="flex flex-wrap flex-row w-full max-w-3xl mt-16">
+                {tags.map(async tag => (
+                    <section>
+                        <a href={`/blog/tag/${tag}/`} class="hover:no-underline">
+                            <div class="rounded-sm transition p-3 hover:bg-gray-50">
+                                <span class="flex-grow text-slate-800 text-xl font-bold text-left mt-0 mb-3">
+                                    #{tag}
+                                </span>
+                            </div>
+                        </a>
+                    </section>
+                ))}
+            </article>
+        </main>
+
+        <Footer />
+    </body>
+</html>

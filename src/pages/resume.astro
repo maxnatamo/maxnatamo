@@ -44,18 +44,20 @@ const currentAgeInYears = currentAge.getFullYear() - 1970;
                             <div class="flex flex-col items-center justify-center text-slate-500 gap-0 mt-4 sm:flex-row md:gap-2 print:justify-start print:gap-2">
                                 {
                                     CONTACT_INFO.map(contact => (
-                                        <a
-                                            href={contact.link}
-                                            target="_blank"
-                                            class="
-                                                flex flex-row items-center gap-1
-                                                text-base font-normal text-slate-500
-                                                no-underline hover:no-underline"
-                                        >
-                                            <p class="text-base leading-4 text-slate-500 align-middle py-1 m-0 mb-1">{contact.text}</p>
-                                        </a>
+                                        <>
+                                            <a
+                                                href={contact.link}
+                                                target="_blank"
+                                                class="
+                                                    flex flex-row items-center gap-1
+                                                    text-base font-normal text-slate-500
+                                                    no-underline hover:no-underline"
+                                            >
+                                                <p class="text-base leading-4 text-slate-500 align-middle py-1 m-0 mb-1">{contact.text}</p>
+                                            </a>
 
-                                        <span class="hidden last-of-type:hidden mb-1 sm:block">&bull;</span>
+                                            <span class="hidden last-of-type:hidden mb-1 sm:block">&bull;</span>
+                                        </>
                                     ))
                                 }
                             </div>

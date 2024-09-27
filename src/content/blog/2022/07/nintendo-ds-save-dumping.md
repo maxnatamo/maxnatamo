@@ -3,6 +3,10 @@ title: 💾 Backup savegames from your Nintendo DS Lite
 description: Saving precious memories from bit-rot and reliving them in emulators.
 publishDate: 'Jul 02 2022'
 category: tech
+tags:
+  - dumping
+  - emulation
+  - nostalgia
 ---
 
 ## Preface

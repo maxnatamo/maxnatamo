@@ -3,6 +3,8 @@ title: 💬 New comments feature
 description: Finally turning the monologue into... basically still a monologue.
 publishDate: 'Sep 18 2024'
 category: meta
+tags:
+  - meta
 ---
 
 Hey, y'all.

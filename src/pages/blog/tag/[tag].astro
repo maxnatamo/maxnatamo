@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import BlogList from '@layouts/BlogList.astro';
+
+export async function getStaticPaths() {
+    const posts = await getCollection('blog');
+    const tags = posts.flatMap(v => v.data.tags)
+    return tags.map(tag => ({
+        params: { tag: tag },
+    }));
+}
+
+const { tag } = Astro.params;
+const posts = (await getCollection('blog'))
+    .filter(p => p.data.tags.includes(tag))
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<BlogList {posts} />
