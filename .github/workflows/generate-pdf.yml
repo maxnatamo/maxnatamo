@@ -9,14 +9,11 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: latest
-      - run: npm ci
-      - run: node print-pdf.js
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install
+      - run: bun print-pdf.ts
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
