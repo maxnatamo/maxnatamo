@@ -30,6 +30,12 @@ const posts = (await getCollection('blog')).sort(
                 <p class="text-md md:text-xl mt-4 text-slate-500">
                     Just my little corner of the world.
                 </p>
+
+                <div class="flex flex-col sm:flex-row justify-center mt-1">
+                    <a href="/rss.xml" class="text-sky-600 ">
+                        RSS
+                    </a>
+                </div>
             </div>
 
             <article class="w-full max-w-3xl flex flex-col gap-4 mt-16">
