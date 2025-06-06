@@ -18,11 +18,11 @@
 
 * 📍 Originating and currently living in Denmark.
 * ☕ Still trying to learn to drink coffee.
-* 👨🏽‍💻 I'm currently working on <a href="https://github.com/maxnatamo/Chart">Chart</a> and a bunch of other smaller projects.
-* 🔨 I'm learning about CI/CD (via GitLab CI) and Kubernetes (via ArgoCD).
+* 👨🏽‍💻 I'm currently working on <a href="https://github.com/lume-lang/lume">Lume</a> and a bunch of other smaller projects.
+* 🔨 I'm still learning the ins-and-outs of Rust.
 
-I'm a newly-educated backend developer from Skive, Denmark.
+I'm a young backend developer from Skive, Denmark.
 
-I am a software developer, and the creator of a GraphQL execution engine, <a href="https://github.com/maxnatamo/Chart">Chart</a>; and a simple link-shortener, called <a href="https://github.com/maxnatamo/surt">Surt</a>. Most of my projects are open source and can be found here on GitHub and my GitLab instance.
+I am a software developer, and the creator of a GraphQL execution engine, <a href="https://github.com/maxnatamo/Chart">Chart</a>; and a home-grown programming language called <a href="https://github.com/lume-lang/lume">Lume</a>. Most of my projects are open source and can be found here on GitHub.
 
 I have most of my experience from backend development, but I also work in some frontend development from time to time. I also do DevOps stuff daily on my home-server.
